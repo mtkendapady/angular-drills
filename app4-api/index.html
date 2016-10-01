@@ -1,7 +1,20 @@
 <html ng-app="apiApp">
-	<body>
-		
-				<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+	<body ng-controller="apiCtrl">
+
+	<ul>
+		<li ng-repeat="ship in starships">
+			{{ ship.name }}
+			<button ng-click="getPilots( ship.pilots )" type="button"> Get {{ ship.pilots.length }} pilots.</button>
+		</li>
+	</ul>
+
+	<ul>
+		<li ng-repeat="pilot in pilots">
+			{{ pilot.name }}
+		</li>
+	</ul>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
 		<script src="app.js"></script>
 		<script src="controller.js"></script>
 		<script src="service.js"></script>
